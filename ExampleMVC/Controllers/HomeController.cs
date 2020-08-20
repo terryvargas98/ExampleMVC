@@ -20,6 +20,7 @@ namespace ExampleMVC.Controllers
 
         public IActionResult Index()
         {
+            ViewBag.nombre = "";
             return View();
         }
 
