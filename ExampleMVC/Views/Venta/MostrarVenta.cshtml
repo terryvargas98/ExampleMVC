@@ -1,0 +1,12 @@
+﻿@model ExampleMVC.Models.Venta
+@{
+    ViewData["Title"] = "MostrarVenta";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>MostrarVenta</h1>
+IGV = 16%
+<p>Detalle de Venta</p>
+<li>"Nombre del producto"-> @ViewBag.ProductoName</li>
+<li>"Monto Total "->@Model.montoTotal</li>
+<li>"Fecha de Venta"->@Model.fecha</li>

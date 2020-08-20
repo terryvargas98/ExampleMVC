@@ -2,12 +2,16 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ExampleMVC.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+
+using System.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 
 namespace ExampleMVC
 {
@@ -23,6 +27,7 @@ namespace ExampleMVC
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<ContextBD>(options => options.UseSqlServer("Server=LAPTOP-2GGF1CMS;Database=VentaMVC;Trusted_Connection=True;"));
             services.AddControllersWithViews();
         }
 
